@@ -5,27 +5,28 @@ var all_movies= 'https://api.airtable.com/v0/appZpIX04cj7nqS5Z/Movies?api_key=' 
 // All details
 function renderRecords(data) {
     
-    $(data.records).each(function(index, movie) {
-      var movie_name = movie.fields['Name'];
-      var movie_pics = movie.fields['Poster'];
-      var movie_info = '';
+    $(data.records).each(function(index, movies) {
+      var movies_name = movies.fields['Name'];
+      var movies_poster = movies.fields['Poster'];
+      var movies_description = movies.fields['Description'];
+      var movies_info = '';
       
       
-      if (movie_name) {
-        movie_info +=`<div class="media">`;
-          movie_info +=`<div class="media-left">`;
-          if (movie_pics) {
-            $.each(movie_pics, function(i, pic){
-              movie_info +=`<a href="detail.html?movieID=${movie.id}"><img src="${pic.url}"></a>`;
-              movie_info +=`</div>`;
-              movie_info += `<div class="media-body">${movie_name}</div>`;
-              movie_info +=`</div>`;
+      if (movies_name) {
+        movies_info +=`<div class="media">`;
+          movies_info +=`<div class="media-left">`;
+          if (movies_poster) {
+            $.each(movies_poster, function(i, poster){
+              movies_info +=`<a href="detail.html?movieID=${movies.id}"><img src="${poster.url}"></a>`;
+              movies_info +=`</div>`;
+              movies_info += `<div class="media-body">${movies_name}</div>`;
+              movies_info +=`</div>`;
             });
           }
       }
       
       
-      $('.movies').append(movie_info);
+      $('.movies').append(movies_info);
     });
   }
 
