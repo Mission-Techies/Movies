@@ -1,8 +1,14 @@
 img {
+  margin-left: 700%;
+margin-right: 700%;
   max-width: 100%;
   height: auto;
 }
 .media-left img {
   width: 80px;
   max-width: none;
+}
+body {
+  text-align: center;
+  
 }
