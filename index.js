@@ -15,7 +15,7 @@ function renderRecords(data) {
       if (movies_name) {
         movies_info +=`<div class="media">`;
           movies_info +=`<div class="media-left">`;
-          if (movies_poster) {
+          if (movies_poster)  {
             $.each(movies_poster, function(i, poster){
               movies_info +=`<a href="detail.html?movieID=${movies.id}"><img src="${poster.url}"></a>`;
               movies_info +=`</div>`;
